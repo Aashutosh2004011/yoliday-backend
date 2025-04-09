@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://yoliday-frontend-2vq9ci17q-aashutoshs-projects-374eb49c.vercel.app'
+  'https://yoliday-frontend-mu.vercel.app'
 ];
 
 app.use(cors({
