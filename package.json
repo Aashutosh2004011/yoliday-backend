@@ -7,8 +7,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+  "start": "node dist/index.js",
+  "dev": "nodemon src/index.ts",
     "migrate": "npm run build && npx sequelize-cli db:migrate",
     "migrate:undo": "npm run build && npx sequelize-cli db:migrate:undo",
     "migrate:undo:all": "npm run build && npx sequelize-cli db:migrate:undo:all",
@@ -22,7 +23,9 @@
     "mysql2": "^3.14.0",
     "nodemon": "^3.1.9",
     "sequelize": "^6.37.7",
-    "sequelize-typescript": "^2.1.6"
+    "sequelize-typescript": "^2.1.6",
+      "ts-node": "^10.9.1",
+  "typescript": "^5.0.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
