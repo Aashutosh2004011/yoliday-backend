@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon ts-node src/index.ts",
     "migrate": "npm run build && npx sequelize-cli db:migrate",
     "migrate:undo": "npm run build && npx sequelize-cli db:migrate:undo",
     "migrate:undo:all": "npm run build && npx sequelize-cli db:migrate:undo:all",
