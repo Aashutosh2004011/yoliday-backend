@@ -7,7 +7,6 @@ import { ProjectImage } from "./models/projectImage.model";
 import { Role } from "./models/role.model";
 import { User } from "./models/user.model";
 
-// Load environment variables
 dotenv.config();
 
 const sequelize = new Sequelize({
