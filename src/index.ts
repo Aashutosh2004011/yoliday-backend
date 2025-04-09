@@ -14,10 +14,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://yoliday-frontend-2vq9ci17q-aashutoshs-projects-374eb49c.vercel.app'
+];
+
 app.use(cors({
-  origin: 'https://yoliday-frontend-2vq9ci17q-aashutoshs-projects-374eb49c.vercel.app',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g., curl, Postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true
 }));
+
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use('/upload', express.static(path.join(__dirname, '../upload')));
