@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://yoliday-frontend-2vq9ci17q-aashutoshs-projects-374eb49c.vercel.app',
   credentials: true
 }));
 app.use(express.json({ limit: '50mb' }));
